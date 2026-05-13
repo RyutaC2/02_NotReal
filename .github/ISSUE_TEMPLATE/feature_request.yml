@@ -2,8 +2,6 @@ name: 新機能Issueテンプレート
 description: 新機能の提案や既存機能の拡張に関するタスクを作成します。
 title: "[Feat]: "
 labels: ["Type: 新機能", "Priority: 中"]
-assignees:
-  - octocat
 body:
   - type: textarea
     id: description

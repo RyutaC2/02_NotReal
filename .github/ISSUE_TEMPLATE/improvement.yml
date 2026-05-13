@@ -2,8 +2,6 @@ name: 改善Issueテンプレート
 description: 実装や改善に関するタスクを作成します。
 title: "[Imp]: "
 labels: ["Type: 改善", "Priority: 中"]
-assignees:
-  - octocat
 body:
   - type: textarea
     id: improvement-target

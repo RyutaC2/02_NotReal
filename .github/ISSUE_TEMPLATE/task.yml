@@ -2,8 +2,6 @@ name: タスクIssueテンプレート
 description: 実装や改善に関係しないタスクを作成します。
 title: "[Task]: "
 labels: ["Priority: 中"]
-assignees:
-  - octocat
 body:
   - type: textarea
     id: task-description

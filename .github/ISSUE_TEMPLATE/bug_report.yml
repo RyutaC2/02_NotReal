@@ -2,8 +2,6 @@ name: バグ報告Issueテンプレート
 description: 不具合の報告、再現手順、修正が必要な問題について記録します。
 title: "[Bug]: "
 labels: ["Problem: バグ", "Priority: 高"]
-assignees:
-  - octocat
 body:
   - type: textarea
     id: expected
