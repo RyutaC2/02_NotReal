@@ -1,0 +1,79 @@
+name: 新機能Issueテンプレート
+description: 新機能の提案や既存機能の拡張に関するタスクを作成します。
+title: "[Feat]: "
+labels: ["Type: 新機能", "Priority: 中"]
+type: feature
+assignees:
+	- octocat
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 新機能の説明
+      description: どのような新機能を追加したいのかを詳しく説明してください。
+      placeholder: ユーザープロフィール画面に、プロフィール画像アップロード機能を追加したいです。
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: 動機 / 背景
+      description: この機能が必要な理由や背景を説明してください。
+      placeholder: ユーザーが自分のプロフィール画像をアップロードできることで、ユーザーエクスペリエンスが向上し、コミュニティ感が強まります。
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 実装案
+      description: この機能をどのように実装するか、技術的な提案があれば記入してください。
+      placeholder: |
+        フロント: React で画像アップロードフォームを作成
+        バック: Go API で画像をS3に保存、URLをDBに記録
+        インフラ: S3 のアクセス権限を設定
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: 対象箇所
+      description: この機能が関係する部分を選択してください（複数選択可）。
+      multiple: true
+      options:
+        - フロントエンド
+        - バックエンド
+        - インフラ
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: 受け入れ条件
+      description: この機能が完成したと判断する基準を記入してください。
+      placeholder: |
+        - ユーザーが画像をアップロードできる
+        - アップロードされた画像がプロフィール画面に表示される
+        - 2MB以上のファイルはエラーを表示する
+        - サポートされる形式は JPG, PNG, WebP
+
+  - type: upload
+    id: mockup
+    attributes:
+      label: イメージ画像 / モックアップ
+      description: 新機能のUIイメージ画像やモックアップがあればアップロードしてください。
+
+  - type: checkboxes
+    id: self-checks
+    attributes:
+      label: 確認事項
+      description: 新機能を提案する前に、以下の項目を確認してください。
+      options:
+        - label: タイトルを適切に記入した。
+        - label: ラベルを適切に選択した。
+        - label: 担当者が間違っていないことを確認した。
+    validations:
+      required: true

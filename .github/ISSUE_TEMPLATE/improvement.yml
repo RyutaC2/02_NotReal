@@ -1,0 +1,73 @@
+name: 改善Issueテンプレート
+description: 実装や改善に関するタスクを作成します。
+title: "[Imp]: "
+labels: ["Type: 改善", "Priority: 中"]
+type: task
+assignees:
+	- octocat
+body:
+  - type: textarea
+    id: improvement-target
+    attributes:
+      label: 改善対象
+      description: 何を改善したいのかを具体的に説明してください。
+      placeholder: ログイン画面のバリデーションが遅く、ユーザーが結果を待つ必要があります。
+    validations:
+      required: true
+
+  - type: textarea
+    id: improvement-content
+    attributes:
+      label: 改善内容
+      description: どのように改善したいのかを説明してください。
+      placeholder: バリデーションを非同期で行い、ユーザーが入力している間にバックグラウンドで処理することで、レスポンスを高速化したいです。
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-effect
+    attributes:
+      label: 期待される効果
+      description: この改善による効果や得られるメリットを説明してください。
+      placeholder: |
+        - ユーザー体験の向上
+        - サーバー負荷の軽減
+        - 処理時間の短縮（目標: 500ms → 100ms）
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: 対象箇所
+      description: この改善が関係する部分を選択してください（複数選択可）。
+      multiple: true
+      options:
+        - フロントエンド
+        - バックエンド
+        - インフラ
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-situation
+    attributes:
+      label: 現状
+      description: 現在の状況や問題点を詳しく説明してください。
+      placeholder: 同期バリデーションにより、ユーザーは入力後2〜3秒待つ必要があります。
+
+  - type: upload
+    id: screenshots
+    attributes:
+      label: スクリーンショット
+      description: 改善対象の状況がわかるスクリーンショットがあればアップロードしてください。
+
+  - type: checkboxes
+    id: self-checks
+    attributes:
+      label: 確認事項
+      description: 改善を提案する前に、以下の項目を確認してください。
+      options:
+        - label: タイトルを適切に記入した。
+        - label: ラベルを適切に選択した。
+        - label: 担当者が間違っていないことを確認した。
+    validations:
+      required: true

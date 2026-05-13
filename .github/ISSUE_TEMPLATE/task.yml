@@ -1,0 +1,80 @@
+name: タスクIssueテンプレート
+description: 実装や改善に関係しないタスクを作成します。
+title: "[Task]: "
+labels: ["Priority: 中"]
+type: task
+assignees:
+	- octocat
+body:
+  - type: textarea
+    id: task-description
+    attributes:
+      label: タスク内容
+      description: このタスクで何をすべきかを簡潔に説明してください。
+      placeholder: ユーザー認証システムのドキュメントを作成する。
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: 詳細
+      description: タスクの詳しい内容や背景を説明してください。
+      placeholder: |
+        ユーザー認証システムの実装方法、API仕様、エラーハンドリングなどを
+        Markdownドキュメントとして作成し、docs/フォルダに保存してください。
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: 対象箇所
+      description: このタスクが関係する部分を選択してください（複数選択可）。
+      multiple: true
+      options:
+        - フロントエンド
+        - バックエンド
+        - インフラ
+        - ドキュメント
+        - その他
+    validations:
+      required: true
+
+  - type: textarea
+    id: checklist
+    attributes:
+      label: チェックリスト
+      description: |
+        このタスクを完了するために必要なサブタスクをリストアップしてください。
+        各行の先頭に「- [ ]」を付けることでチェックボックスになります。
+      placeholder: |
+        - [ ] API仕様書を作成する
+        - [ ] エラーハンドリングについて記述する
+        - [ ] 実装例を記述する
+        - [ ] レビューを受ける
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 注記 / 参考情報
+      description: タスク実行時に参考になる情報やリンク、注意事項があれば記入してください。
+      placeholder: 関連PR: #123, 参考リンク: https://xxx.com
+
+  - type: upload
+    id: attachments
+    attributes:
+      label: スクリーンショット / 補足資料
+      description: 補足資料やスクリーンショットがあればアップロードしてください。
+
+  - type: checkboxes
+    id: self-checks
+    attributes:
+      label: 確認事項
+      description: タスクを作成する前に、以下の項目を確認してください。
+      options:
+        - label: タイトルを適切に記入した。
+        - label: ラベルを適切に選択した。
+        - label: 担当者が間違っていないことを確認した。
+    validations:
+      required: true

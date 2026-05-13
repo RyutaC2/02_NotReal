@@ -1,0 +1,77 @@
+name: バグ報告Issueテンプレート
+description: 不具合の報告、再現手順、修正が必要な問題について記録します。
+title: "[Bug]: "
+labels: ["Problem: バグ", "Priority: 高"]
+type: bug
+assignees:
+	- octocat
+body:
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待される挙動
+      placeholder: 本来であれば、DBにユーザーデータが保存され、リダイレクトされる。
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の挙動
+      placeholder: 500エラーが発生し、DBには何も保存されていない。
+    validations:
+      required: true
+  
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現手順
+      description: |
+        1. xxxx/yyyy/zzzz にアクセスする。
+        2. 〇〇と△△を入力する。
+        3. 「送信」ボタンをクリックする。
+    validations:
+      required: true
+  
+  - type: input
+    id: environment
+    attributes:
+      label: 環境
+      description: 不具合が発生している環境を記入してください。
+      placeholder: Windows 11, Chrome
+    validations:
+      required: true
+
+  - type: input
+    id: context
+    attributes:
+      label: ブランチ / コミット
+      description: 不具合が発生しているブランチや、特定のコミットIDがあれば記入してください。
+      placeholder: feature/login-page a1b2c3d
+    validations:
+      required: true
+  
+  - type: textarea
+    id: logs
+    attributes:
+      label: ログ / APIレスポンス
+      render: shell
+      description: エラーメッセージやスタックトレースなどをここに貼り付けてください。
+  
+  - type: upload
+    id: screenshots
+    attributes:
+      label: スクリーンショット
+      description: 不具合の状況がわかるスクリーンショットがあればアップロードしてください。
+  
+  - type: checkboxes:
+    id: self-checks
+    attributes:
+      label: 確認事項
+      description: 不具合を報告する前に、以下の項目を確認してください。
+      options:
+        - label: タイトルを適切に記入した。
+        - label: ラベルを適切に選択した。
+        - label: 担当者が間違っていないことを確認した。
+    validations:
+      required: true
